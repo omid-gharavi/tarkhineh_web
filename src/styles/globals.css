@@ -92,6 +92,44 @@
   --sidebar-ring: oklch(0.439 0 0);
 }
 
+@theme {
+  --color-white: #FFFFFF;
+  --color-black: #0C0C0C;
+  --color-primary-theme: #417F56;
+  --color-tint-1: #E5F2E9;
+  --color-tint-2: #CAE4D3;
+  --color-tint-3: #B0D7BD;
+  --color-tint-4: #96C9A7;
+  --color-tint-5: #7CBC91;
+  --color-tint-6: #61AE7B;
+  --color-tint-7: #4E9968;
+  --color-shade-1: #396F4B;
+  --color-shade-2: #315F41;
+  --color-shade-3: #294F36;
+  --color-shade-4: #21402B;
+  --color-shade-5: #183020;
+  --color-shade-6: #102016;
+  --color-shade-7: #08100B;
+  --color-gray-1: #F9F9F9;
+  --color-gray-2: #E1E1E1;
+  --color-gray-3: #EDEDED;
+  --color-gray-4: #CBCBCB;
+  --color-gray-5: #ADADAD;
+  --color-gray-6: #757575;
+  --color-gray-7: #717171;
+  --color-gray-8: #353535;
+  --color-success: #00966D;
+  --color-success-light: #00BA88;
+  --color-success-extra-light: #F3FDFA;
+  --color-success: #00966D;
+  --color-error: #C30000;
+  --color-error-light: #ED2E2E;
+  --color-error-extra-light: #FFF2F2;
+  --color-warning: #A9791C;
+  --color-warning-light: #F4B740;
+  --color-warning-extra-light: #FFF8E1;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

@@ -1,13 +1,13 @@
 import Logo from "@/components/svgs/logo";
 import { Button } from "../components/ui/button";
+import Header from "@/components/shared/header/header";
 
 
 export default function Home() {
 
   return (
-    <div className="min-h-[100dvh] flex items-center justify-center">
-      <Button>button</Button>
-      <Logo />
-    </div>
+    <>
+      <Header />
+    </>
   );
 }

@@ -1,4 +1,4 @@
-export const list: { name: string, isLink: boolean, href?: string }[] = [
+export const navigationList: { name: string, isLink: boolean, href?: string }[] = [
     {
         name: 'صفحه اصلی',
         href: '/',
@@ -14,17 +14,24 @@ export const list: { name: string, isLink: boolean, href?: string }[] = [
     },
     {
         name: 'اعطای نمایندگی',
-        href: '',
+        href: '/contact',
         isLink: true,
     },
     {
         name: 'درباره ما',
-        href: '',
+        href: '/about',
         isLink: true,
     },
     {
         name: 'تماس با ما',
-        href: '',
+        href: '/test',
         isLink: true,
     },
 ]
+
+// export const navigationIcons: { icon: SVGElement, href?: string }[] = [
+//     {
+//         icon: <Search,
+//         href: '',
+//     },
+// ]
