@@ -3,6 +3,24 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Vazir';
+  src: url('/public/fonts/vazir/Vazir-Medium.woff'),
+    url('/public/fonts/vazir/Vazir-Medium.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('/public/fonts/vazir/Vazir-Bold.woff'),
+    url('/public/fonts/vazir/Vazir-Bold.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -120,5 +138,6 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Vazir', sans-serif;
   }
 }
