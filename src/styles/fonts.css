@@ -1,7 +1,9 @@
 @font-face {
     font-family: 'Vazir';
     src: url('/public/fonts/vazir/Vazir-Medium.woff'),
-        url('/public/fonts/vazir/Vazir-Medium.woff2');
+        url('/public/fonts/vazir/Vazir-Medium.woff2'),
+        url('/public/fonts/vazir/Vazir-Medium.ttf'),
+        url('/public/fonts/vazir/Vazir-Medium.eot');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -10,7 +12,9 @@
 @font-face {
     font-family: 'Vazir';
     src: url('/public/fonts/vazir/Vazir-Bold.woff'),
-        url('/public/fonts/vazir/Vazir-Bold.woff2');
+        url('/public/fonts/vazir/Vazir-Bold.woff2'),
+        url('/public/fonts/vazir/Vazir-Bold.ttf'),
+        url('/public/fonts/vazir/Vazir-Bold.eot');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
