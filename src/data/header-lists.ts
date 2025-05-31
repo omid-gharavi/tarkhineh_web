@@ -35,8 +35,4 @@ export const navList: { name: string, icon: string, isLink: boolean, href?: stri
     },
 ]
 
-export const iconList: { name: string }[] = [
-    { name: 'user' },
-    { name: 'search' },
-    { name: 'shopping-cart' }
-]
+export const iconList: string[] = ['user', 'search', 'shopping-cart']

@@ -15,9 +15,9 @@ function Header() {
             </nav>
             <div className='flex items-center gap-2'>
                 {
-                    iconList.map(({ name }, index) => (
-                        <div key={index + 1} className={`bg-tint-1 hover:bg-tint-2 rounded-sm cursor-pointer flex items-center justify-center size-10 max-laptop:size-7 ${name === 'search' && 'max-laptop:hidden'}`}>
-                            <Icon name={name} className='text-primary-theme max-laptop:size-4 size-6' />
+                    iconList.map((value, index) => (
+                        <div key={index + 1} className={`bg-tint-1 hover:bg-tint-2 rounded-sm cursor-pointer flex items-center justify-center size-10 max-laptop:size-7 ${value === 'search' && 'max-laptop:hidden'}`}>
+                            <Icon name={value} className='text-primary-theme max-laptop:size-4 size-6' />
                         </div>
                     ))
                 }
