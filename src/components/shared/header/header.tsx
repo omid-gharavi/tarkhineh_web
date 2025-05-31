@@ -5,10 +5,7 @@ import Icon from '../icon/icon'
 import HamburgerMenu from './ham-menu'
 import { iconList } from '@/data/header-lists'
 
-interface Props { }
-
-function Header({ }: Props) {
-
+function Header() {
     return (
         <div className='sticky top-0 py-8 max-laptop:py-4 px-[108px] max-laptop:px-5 flex items-center justify-between'>
             <HamburgerMenu />
