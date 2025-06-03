@@ -13,13 +13,12 @@ function Navigation() {
     return (
         <>
             {
-                navList.map(({ name, icon, href, isLink }, index) => (
+                navList.map(({ name, href, isLink }, index) => (
                     isLink ?
                         <Link
                             key={index + 1}
                             href={href ?? ''}
-                            className={`hover:text-tint-7 flex items-center gap-1 ${pathname === href ? 'text-primary-theme min-laptop:font-bold min-laptop:underline min-laptop:underline-offset-8' : 'text-gray-7 font-medium'}`}>
-                            <Icon name={icon} className='size-4 text-black max-laptop:block hidden' />
+                            className={`hover:text-tint-7 max-laptop:text-black flex items-center gap-1 ${pathname === href ? 'text-primary-theme font-bold underline underline-offset-8' : 'text-gray-7 font-medium'}`}>
                             {name}
                         </Link>
                         :

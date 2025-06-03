@@ -26,14 +26,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <head>
-        <link
-          rel="preload"
-          href="/sprite.svg"
-          as="image"
-          type="image/svg+xml"
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased select-none`}
       >

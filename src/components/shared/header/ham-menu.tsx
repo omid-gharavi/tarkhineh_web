@@ -2,8 +2,8 @@ import React from 'react'
 import Icon from '../icon/icon'
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import Logo from '@/components/svgs/logo'
-import Navigation from './navigation'
 import { X } from 'lucide-react'
+import NavigationMobile from './navigation-mobile'
 
 function HamburgerMenu() {
     return (
@@ -22,7 +22,7 @@ function HamburgerMenu() {
                     <div className='bg-tint-1 rounded-sm cursor-pointer flex items-center justify-center size-8'>
                         <Icon name='search' className='size-4 text-primary-theme' />
                     </div>
-                    <Navigation />
+                    <NavigationMobile />
                 </div>
             </SheetContent>
         </Sheet>

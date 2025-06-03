@@ -7,30 +7,30 @@ export const navList: { name: string, icon: string, isLink: boolean, href?: stri
     },
     {
         name: 'شعبه',
-        icon: '',
+        icon: 'home-hashtag',
         isLink: false,
     },
     {
         name: 'منو',
-        icon: '',
+        icon: 'menu-board',
         isLink: false,
     },
     {
         name: 'اعطای نمایندگی',
         icon: '',
-        href: '/contact',
+        href: '/donation',
         isLink: true,
     },
     {
         name: 'درباره ما',
-        icon: '',
+        icon: 'profile-user',
         href: '/about',
         isLink: true,
     },
     {
         name: 'تماس با ما',
-        icon: '',
-        href: '/test',
+        icon: 'call',
+        href: '/contact',
         isLink: true,
     },
 ]
