@@ -9,7 +9,6 @@ export default function NavigationMobile() {
     const [toggle, setToggle] = useState<boolean[]>([false, false]);
 
     const switchToggle = (index: number): void => {
-        console.log(index, 'index')
         setToggle(prev => {
             const updatedValue = [...prev];
             updatedValue[index] = !updatedValue[index];
