@@ -1,16 +1,25 @@
+'use client'
+
 import { DrawerClose } from "@/components/ui/drawer";
+import { X } from "lucide-react";
+import { useState } from "react";
 
 export default function Search() {
+    const [inputSearch, setInputSearch] = useState<string>('');
+
     return (
         <div className="p-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-6">
                 <input
                     type="search"
                     placeholder="جستجو"
+                    onChange={(e) => setInputSearch(e.target.value)}
                     className="w-full h-10 rounded-xl border-gray-3 border-2 px-4"
                 />
                 <DrawerClose asChild>
-                    <button>x</button>
+                    <button>
+                        <X size={20} />
+                    </button>
                 </DrawerClose>
             </div>
         </div>

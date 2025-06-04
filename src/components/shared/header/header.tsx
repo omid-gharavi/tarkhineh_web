@@ -7,7 +7,7 @@ import { iconList } from '@/data/header-lists'
 
 function Header() {
     return (
-        <div className='sticky top-0 py-8 max-laptop:py-4 px-[108px] max-laptop:px-5 flex items-center justify-between'>
+        <div className='sticky top-0 z-50 bg-white py-8 max-laptop:py-4 px-[108px] max-laptop:px-5 flex items-center justify-between'>
             <HamburgerMenu />
             <Logo />
             <nav className='max-laptop:hidden flex items-center gap-6'>

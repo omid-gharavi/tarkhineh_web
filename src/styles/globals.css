@@ -111,6 +111,7 @@
   --color-warning-light: #F4B740;
   --color-warning-extra-light: #FFF8E1;
   --breakpoint-laptop: 1124px;
+  --font-vazir: 'vazir'
 }
 
 @theme inline {
@@ -159,6 +160,5 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Vazir', sans-serif;
   }
 }
