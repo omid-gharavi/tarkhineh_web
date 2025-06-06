@@ -28,7 +28,7 @@ function HamburgerMenu() {
                                 <p>جستجو</p>
                             </button>
                         </DrawerTrigger>
-                        <DrawerContent className='min-h-[100dvh] max-h-[0] !rounded-none'>
+                        <DrawerContent className='min-h-[100vh] max-h-[0] !rounded-none'>
                             <Search />
                         </DrawerContent>
                     </Drawer>
