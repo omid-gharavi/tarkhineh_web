@@ -64,7 +64,7 @@ export default function Slider() {
                 <p className="text-white text-4xl max-laptop:text-2xl max-md:text-lg w-max font-bold">تجربه غذای سالم و گیاهی به سبک ترخینه</p>
                 <Button variant={'primaryTheme'} className="w-[184px] h-10">سفارش آنلاین غذا</Button>
             </div>
-            <div ref={sliderRef} className="keen-slider">
+            <div ref={sliderRef} className="keen-slider brightness-50">
 
                 {
                     images.map((value, index) => (
