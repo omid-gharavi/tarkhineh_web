@@ -17,7 +17,6 @@
 
 .dots {
     display: flex;
-    padding: 10px 0;
     justify-content: center;
 }
 
@@ -25,7 +24,7 @@
     border: none;
     width: 10px;
     height: 10px;
-    background: #c5c5c5;
+    background: var(--color-gray-400);
     border-radius: 50%;
     margin: 0 5px;
     padding: 5px;
@@ -37,7 +36,8 @@
 }
 
 .dot.active {
-    background: #000;
+    position: relative;
+    background: var(--color-primary-theme);
 }
 
 .arrow {

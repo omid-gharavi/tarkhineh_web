@@ -4,8 +4,7 @@ import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from '@/com
 import Logo from '@/components/svgs/logo'
 import { X } from 'lucide-react'
 import NavigationMobile from './navigation-mobile'
-import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
-import Search from '../search/search'
+import DrawerSearch from '../search/drawer-search'
 
 function HamburgerMenu() {
     return (
@@ -21,17 +20,17 @@ function HamburgerMenu() {
                     </SheetClose>
                 </SheetTitle>
                 <div className='mt-2 flex flex-col gap-6'>
-                    <Drawer>
-                        <DrawerTrigger asChild>
+                    <Sheet>
+                        <SheetTrigger asChild>
                             <button className='flex items-center gap-4'>
                                 <Icon name='search' className='size-4 text-primary-theme' />
                                 <p>جستجو</p>
                             </button>
-                        </DrawerTrigger>
-                        <DrawerContent className='min-h-[100dvh] !rounded-none flex flex-col'>
-                            <Search />
-                        </DrawerContent>
-                    </Drawer>
+                        </SheetTrigger>
+                        <SheetContent side='bottom' className='min-h-[100dvh] !rounded-none'>
+                            <DrawerSearch />
+                        </SheetContent>
+                    </Sheet>
                     <NavigationMobile />
                 </div>
             </SheetContent>
