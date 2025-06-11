@@ -1,4 +1,4 @@
-export const navList: { name: string, icon: string, isLink: boolean, href?: string }[] = [
+export const navList: { name: string, icon: string, isLink: boolean, href?: string, items?: { title: string, href: string }[] }[] = [
     {
         name: 'صفحه اصلی',
         icon: 'home',
@@ -9,11 +9,47 @@ export const navList: { name: string, icon: string, isLink: boolean, href?: stri
         name: 'شعبه',
         icon: 'home-hashtag',
         isLink: false,
+        items: [
+            {
+                title: 'اکباتان',
+                href: '',
+            },
+            {
+                title: 'چالوس',
+                href: '',
+            },
+            {
+                title: 'اقدسیه',
+                href: '',
+            },
+            {
+                title: 'ونک',
+                href: '',
+            },
+        ],
     },
     {
         name: 'منو',
         icon: 'menu-board',
         isLink: false,
+        items: [
+            {
+                title: 'غذای اصلی',
+                href: '',
+            },
+            {
+                title: 'پیش غذا',
+                href: '',
+            },
+            {
+                title: 'دسر',
+                href: '',
+            },
+            {
+                title: 'نوشیدنی',
+                href: '',
+            },
+        ],
     },
     {
         name: 'اعطای نمایندگی',
