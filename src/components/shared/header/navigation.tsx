@@ -13,6 +13,7 @@ import {
     NavigationMenuTrigger,
     NavigationMenuContent
 } from '@/components/ui/navigation-menu'
+import { NavigationMenuLink } from '@radix-ui/react-navigation-menu'
 
 function Navigation() {
     const pathname = usePathname();
@@ -47,10 +48,14 @@ function Navigation() {
                                         </motion.span></NavigationMenuTrigger>
                                 </motion.div>
                                 <NavigationMenuContent>
-                                    <div className='flex flex-col gap-2'>
+                                    <div className='flex flex-col gap-2 p-2'>
                                         {
                                             items?.map(({ title, href }, index) => (
-                                                <Link href={href}>{title}</Link>
+                                                <NavigationMenuLink key={index + 1} asChild>
+                                                    {
+                                                        <Link className={`${items.length - 1 !== index && 'border-b border-gray-5 pb-2'}`} href={href}>{title}</Link>
+                                                    }
+                                                </NavigationMenuLink>
                                             ))
                                         }
                                     </div>
