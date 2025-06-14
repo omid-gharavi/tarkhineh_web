@@ -60,7 +60,7 @@ export default function Slider() {
 
     return (
         <div className="relative navigation-wrapper">
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-11 z-50">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-11 z-40">
                 <p className="text-white text-4xl max-laptop:text-2xl max-md:text-lg w-max font-bold">تجربه غذای سالم و گیاهی به سبک ترخینه</p>
                 <Button variant={'primaryTheme'} className="w-[184px] h-10">سفارش آنلاین غذا</Button>
             </div>
