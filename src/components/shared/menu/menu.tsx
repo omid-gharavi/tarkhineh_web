@@ -11,6 +11,7 @@ export default function Menu() {
                     menu.map(({ title, image }, index) => (
                         <div key={index + 1} className="relative w-[287px] max-laptop:w-[152px] max-w-full min-h-[180px] max-laptop:min-h-[81px] border border-primary-theme rounded-lg">
                             <Image
+                                loading="lazy"
                                 src={image}
                                 alt="cover"
                                 className="size-[240px] max-laptop:size-[100px] absolute bottom-[61px] max-laptop:bottom-[29px] left-1/2 -translate-x-1/2"
