@@ -110,7 +110,9 @@
   --color-warning: #A9791C;
   --color-warning-light: #F4B740;
   --color-warning-extra-light: #FFF8E1;
+
   --breakpoint-laptop: 1124px;
+  --container-desktop: 1920px;
   --font-vazir: 'vazir'
 }
 

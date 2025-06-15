@@ -22,7 +22,10 @@ const buttonVariants = cva(
                 tint:
                     "bg-tint-1 rounded-sm hover:bg-tint-2",
                 primaryTheme:
-                    "bg-primary-theme rounded-sm hover:bg-tint-7 text-white"
+                    "bg-primary-theme rounded-sm hover:bg-tint-7 text-white",
+                glass:
+                    "bg-transparent rounded-sm border-2 border-white",
+
             },
             size: {
                 default: "h-9 px-4 py-2",
