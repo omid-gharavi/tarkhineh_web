@@ -1,4 +1,5 @@
 import AboutBody from "@/components/shared/about/about-body";
+import Branches from "@/components/shared/branches/branches";
 import Header from "@/components/shared/header/header";
 import Menu from "@/components/shared/menu/menu";
 import Slider from "@/components/shared/slider/slider";
@@ -11,6 +12,7 @@ export default function Home() {
       <Slider />
       <Menu />
       <AboutBody />
+      <Branches />
     </div>
   );
 }
