@@ -33,7 +33,7 @@ export default function Branches() {
                         <div
                             className="branch" key={index + 1}>
                             <div
-                                className="branch-child transition-all"
+                                className="branch-child"
                             >
                                 <Image
                                     className="size-full object-cover overflow-hidden"
