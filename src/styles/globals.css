@@ -174,4 +174,12 @@
   .branch:hover .branch-child {
     @apply grid-rows-[190px];
   }
+
+  .branch_btn {
+    @apply opacity-0 invisible;
+  }
+
+  .branch:hover .branch_btn {
+    @apply opacity-100 visible;
+  }
 }

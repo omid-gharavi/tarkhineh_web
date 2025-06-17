@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
 export default function Branches() {
@@ -47,6 +48,7 @@ export default function Branches() {
                                 <p className="font-semibold max-laptop:font-medium text-xl max-laptop:text-sm px-2 text-center">{title}</p>
                                 <p className="font-medium text-sm max-laptop:text-[10px] text-center px-2 mt-4 max-laptop:mt-2">{desc}</p>
                             </div>
+                            <Button className="branch_btn" variant='tintGlass'>صفحه شعبه</Button>
                         </div>
                     ))
                 }
