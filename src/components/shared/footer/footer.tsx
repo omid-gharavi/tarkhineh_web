@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Icon from "../icon/icon";
+import { Input } from "@/components/ui/input";
 
 export default function Footer() {
     const footerList: { title: string, lists: string[], icons?: string[] }[] = [
@@ -14,6 +15,21 @@ export default function Footer() {
         },
     ];
 
+    const inputList: { type: string, placeholder: string }[] = [
+        {
+            type: 'text',
+            placeholder: 'نام و نام خانوادگی',
+        },
+        {
+            type: 'tel',
+            placeholder: 'شماره تماس',
+        },
+        {
+            type: 'email',
+            placeholder: 'آدرس ایمیل (اختیاری)',
+        },
+    ]
+
     return (
         <div className="mt-12 relative h-80">
             <Image
@@ -24,7 +40,7 @@ export default function Footer() {
                 className="absolute -z-20 size-full object-cover"
             />
             <div className="absolute -z-10 inset-0 bg-[rgba(0,0,0,0.5)]"></div>
-            <div className="text-white pt-8 flex justify-center gap-32">
+            <div className="text-white pt-8 flex justify-center gap-32 max-laptop:gap-20">
                 {
                     footerList.map(({ title, lists, icons }, index) => (
                         <ul className="flex flex-col gap-4" key={index + 1}>
@@ -48,9 +64,23 @@ export default function Footer() {
                         </ul>
                     ))
                 }
-                <form>
+                <form className="max-laptop:hidden">
                     <span className="font-bold text-xl">پیام به ترخینه </span>
-                    <div className=""></div>
+                    <div className="mt-4 h-36 flex items-center gap-6">
+                        <div className="flex flex-col gap-3">
+                            {
+                                inputList.map(({ type, placeholder }, index) => (
+                                    <Input
+                                        key={index + 1}
+                                        type={type}
+                                        placeholder={placeholder}
+                                        className="placeholder:text-right placeholder:text-white h-10"
+                                    />
+                                ))
+                            }
+                        </div>
+                        <div></div>
+                    </div>
                 </form>
             </div>
         </div>
