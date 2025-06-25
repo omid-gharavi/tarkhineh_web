@@ -1,6 +1,6 @@
 'use client'
 
-import { navList } from '@/data/header-lists'
+import { navList } from '@/lists/header-lists'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'

@@ -3,7 +3,7 @@ import React from 'react'
 import Navigation from './navigation'
 import Icon from '../icon/icon'
 import HamburgerMenu from './ham-menu'
-import { iconList } from '@/data/header-lists'
+import { iconList } from '@/lists/header-lists'
 
 function Header() {
     return (

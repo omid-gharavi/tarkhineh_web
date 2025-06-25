@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { menu } from "@/data/menu";
+import { menu } from "@/lists/menu";
 import Image from "next/image";
 
 export default function Menu() {
