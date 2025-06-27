@@ -79,7 +79,9 @@ export default function Footer() {
                                 ))
                             }
                         </div>
-                        <div></div>
+                        <div className="">
+                            <textarea />
+                        </div>
                     </div>
                 </form>
             </div>
