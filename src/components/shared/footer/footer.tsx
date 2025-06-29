@@ -1,37 +1,11 @@
 import Image from "next/image";
 import Icon from "../icon/icon";
-import { Input } from "@/components/ui/input";
+import FooterForm from "./footer-form";
+import { footerList } from "@/lists/footer-lists";
 
 export default function Footer() {
-    const footerList: { title: string, lists: string[], icons?: string[] }[] = [
-        {
-            title: 'دسترسی آسان',
-            lists: ['پرسش‌های متداول', 'قوانین ترخینه', 'حریم خصوصی'],
-            icons: ['twitter', 'instagram', 'telegram'],
-        },
-        {
-            title: 'شعبه‌های ترخینه',
-            lists: ['شعبه اکباتان', 'شعبه چالوس', 'شعبه اقدسیه', 'شعبه ونک'],
-        },
-    ];
-
-    const inputList: { type: string, placeholder: string }[] = [
-        {
-            type: 'text',
-            placeholder: 'نام و نام خانوادگی',
-        },
-        {
-            type: 'tel',
-            placeholder: 'شماره تماس',
-        },
-        {
-            type: 'email',
-            placeholder: 'آدرس ایمیل (اختیاری)',
-        },
-    ]
-
     return (
-        <div className="mt-12 relative h-80">
+        <div className="mt-12 relative min-h-80">
             <Image
                 src={'/images/pic01.jpg'}
                 alt="footer"
@@ -64,26 +38,7 @@ export default function Footer() {
                         </ul>
                     ))
                 }
-                <form className="max-laptop:hidden">
-                    <span className="font-bold text-xl">پیام به ترخینه </span>
-                    <div className="mt-4 h-36 flex items-center gap-6">
-                        <div className="flex flex-col gap-3">
-                            {
-                                inputList.map(({ type, placeholder }, index) => (
-                                    <Input
-                                        key={index + 1}
-                                        type={type}
-                                        placeholder={placeholder}
-                                        className="placeholder:text-right placeholder:text-white h-10"
-                                    />
-                                ))
-                            }
-                        </div>
-                        <div className="">
-                            <textarea />
-                        </div>
-                    </div>
-                </form>
+                <FooterForm />
             </div>
         </div>
     )

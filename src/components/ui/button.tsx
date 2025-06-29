@@ -26,7 +26,9 @@ const buttonVariants = cva(
                 glass:
                     "bg-transparent rounded-sm border-2 border-white",
                 tintGlass:
-                    'bg-transparent rounded-sm border-2 text-primary-theme border-primary-theme transition-all duration-300 ease-in-out'
+                    'bg-transparent rounded-sm border-2 text-primary-theme border-primary-theme transition-all duration-300 ease-in-out',
+                transparent:
+                    'bg-transparent border border-white rounded-sm',
 
             },
             size: {
