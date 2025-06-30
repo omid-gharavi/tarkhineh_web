@@ -45,7 +45,7 @@ export default function Branches() {
                                 />
                             </div>
                             <div>
-                                <p className="font-semibold max-laptop:font-medium text-xl max-laptop:text-sm px-2 text-center">{title}</p>
+                                <p className="font-semibold max-laptop:font-medium text-xl max-laptop:text-sm px-2 text-center max-laptop:text-right max-sm:text-center">{title}</p>
                                 <p className="font-medium text-sm max-laptop:text-[10px] text-center px-2 mt-4 max-laptop:mt-2">{desc}</p>
                             </div>
                             <Button className="branch_btn max-laptop:hidden mt-2" variant='tintGlass'>صفحه شعبه</Button>
