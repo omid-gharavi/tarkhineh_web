@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "@/styles/globals.css";
 import { vazir_font } from "@/utils/fonts";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "ترخینه",

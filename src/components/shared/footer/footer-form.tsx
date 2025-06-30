@@ -27,7 +27,7 @@ export default function FooterForm() {
     ]);
 
     const onInputForm = (index: number, value: string, type: string): void => {
-        if (index === 3 && value.length > 200 && type === 'textarea') return
+        if (index === 3 && value.length > 200 && type === 'textarea') return;
         setInputForm((prev) => {
             const newPrev = [...prev];
             newPrev[index].value = value;
@@ -74,7 +74,7 @@ export default function FooterForm() {
                         value={inputForm[3].value}
                         onChange={(e) => onInputForm(3, e.target.value, 'textarea')}
                     />
-                    <p dir="ltr" className="text-xs mt-1 mb-2">{inputForm[3].value.length}/200</p>
+                    <p dir="ltr" className="text-xs mt-1 mb-2">{inputForm[3].value.length} / 200</p>
                     <Button
                         variant='transparent'
                         className="float-left w-48 h-10"

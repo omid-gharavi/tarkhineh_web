@@ -18,6 +18,11 @@ export const vazir_font = localFont({
             weight: '400'
         },
         {
+            path: '../../public/fonts/Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.woff',
+            style: 'normal',
+            weight: '400'
+        },
+        {
             path: '../../public/fonts/Vazir-Bold.woff',
             style: 'normal',
             weight: '700'
@@ -33,5 +38,5 @@ export const vazir_font = localFont({
             weight: '700'
         },
     ],
-    display: 'swap'
+    display: 'swap',
 });
