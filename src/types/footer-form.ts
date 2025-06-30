@@ -1,2 +1,10 @@
-interface input_list { type: string, placeholder: string, dir: string }
-interface footer_list { title: string, lists: string[], icons?: string[] }
+interface input_list {
+    type: 'text' | 'tel' | 'email' | 'textarea',
+    placeholder: string,
+    dir: 'ltr' | 'rtl'
+}
+interface footer_list {
+    title: string,
+    lists: string[],
+    icons?: string[]
+}
