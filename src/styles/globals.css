@@ -182,4 +182,19 @@
   .branch:hover .branch_btn {
     @apply opacity-100 visible;
   }
+
+  .fade-animation {
+    animation: fade 0.5s forwards linear;
+    animation-delay: 1s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
 }

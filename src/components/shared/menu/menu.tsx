@@ -14,7 +14,7 @@ export default function Menu() {
                                 loading="lazy"
                                 src={image}
                                 alt="cover"
-                                className="size-[240px] max-laptop:size-[100px] absolute bottom-[61px] max-laptop:bottom-[29px] left-1/2 -translate-x-1/2"
+                                className="size-[240px] max-laptop:size-[100px] absolute bottom-[61px] max-laptop:bottom-[29px] left-1/2 -translate-x-1/2 fade-animation opacity-0"
                                 width={64}
                                 height={64}
                             />
