@@ -28,6 +28,7 @@ export default function FooterForm() {
 
     const onInputForm = (index: number, value: string, type: string): void => {
         if (index === 3 && value.length > 200 && type === 'textarea') return;
+        if (value.length > 50 && type !== 'textarea') return;
         setInputForm((prev) => {
             const newPrev = [...prev];
             newPrev[index].value = value;
