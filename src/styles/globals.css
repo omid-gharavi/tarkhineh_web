@@ -164,7 +164,7 @@
   }
 
   .branch {
-    @apply pb-4 max-laptop:pb-0 flex flex-col max-laptop:flex-row items-center border border-gray-5 rounded-lg overflow-hidden h-[344px] max-laptop:h-20 max-laptop:gap-x-2 gap-y-2;
+    @apply pb-4 max-laptop:pb-0 flex flex-col max-laptop:flex-row items-center border border-gray-5 rounded-lg overflow-hidden h-[344px] max-laptop:h-20 max-laptop:gap-x-2 gap-y-2 hover:shadow-lg transition-all duration-200 ease-in-out;
   }
 
   .branch-child {
