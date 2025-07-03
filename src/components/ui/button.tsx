@@ -28,7 +28,7 @@ const buttonVariants = cva(
                 tintGlass:
                     'bg-transparent rounded-sm border-2 text-primary-theme border-primary-theme transition-all duration-300 ease-in-out',
                 transparent:
-                    'bg-transparent border border-white rounded-sm',
+                    'bg-transparent border border-white rounded-sm hover:bg-white hover:text-black cursor-pointer',
 
             },
             size: {
