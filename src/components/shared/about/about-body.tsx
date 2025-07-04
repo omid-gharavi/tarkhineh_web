@@ -36,7 +36,7 @@ export default function AboutBody() {
                 <div className="w-full max-w-[600px]">
                     <p className="font-bold text-2xl max-laptop:text-lg">رستوران‌های زنجیره‌ای ترخینه</p>
                     <p className="text-xl max-laptop:text-sm mt-6 text-justify leading-8">مهمان‌نوازی یکی از مهم‌ترین مشخصه‌های ایرانیان است و باعث افتخار ماست که بیش از 20 سال است خدمت‌گزار مردم شریف ایران هستیم. ما در رستوران‌های زنجیره‌ای ترخینه همواره تلاش کردیم که در محیطی اصیل بر پایه معماری و طراحی مدرن در کنار طبیعتی دلنواز، غذایی سالم و درخور شان شما عزیزان ارائه دهیم.</p>
-                    <Button variant={'glass'} className="font-medium mt-4 float-left">
+                    <Button variant={'glass'} className="font-medium mt-4 float-left ">
                         اطلاعات بیشتر
                         <Icon name="arrow-down" className="rotate-90 mr-2 w-[184px]" />
                     </Button>
