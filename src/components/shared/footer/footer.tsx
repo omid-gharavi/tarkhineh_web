@@ -21,7 +21,7 @@ export default function Footer() {
                             <span className="font-bold text-xl">{title}</span>
                             {
                                 lists.map((list, index) => (
-                                    <li key={index + 1} className="font-medium text-sm">{list}</li>
+                                    <li key={index + 1} className="font-medium text-sm hover:text-tint-7">{list}</li>
                                 ))
                             }
                             <div className="flex items-center gap-4">
