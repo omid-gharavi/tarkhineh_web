@@ -45,7 +45,8 @@ function Navigation() {
                                                 tap: { rotate: 180 },
                                             }}>
                                             <Icon name='arrow-down' className='size-4' />
-                                        </motion.span></NavigationMenuTrigger>
+                                        </motion.span>
+                                    </NavigationMenuTrigger>
                                 </motion.div>
                                 <NavigationMenuContent>
                                     <div className='flex flex-col gap-2 p-2'>
@@ -53,7 +54,7 @@ function Navigation() {
                                             items?.map(({ title, href }, index) => (
                                                 <NavigationMenuLink key={index + 1} asChild>
                                                     {
-                                                        <Link className={`${items.length - 1 !== index && 'border-b border-gray-5 pb-2'}`} href={href}>{title}</Link>
+                                                        <Link className={`hover:text-tint-7 ${items.length - 1 !== index && 'border-b border-gray-5 pb-2'}`} href={href}>{title}</Link>
                                                     }
                                                 </NavigationMenuLink>
                                             ))
