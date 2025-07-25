@@ -4,37 +4,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { inputList } from "@/lists/footer-lists";
-import { KeyboardEvent, useState } from "react";
+import { KeyboardEvent } from "react";
+import { useForm } from 'react-hook-form'
 
 export default function FooterForm() {
-    const [inputForm, setInputForm] = useState<{ type: string, value: string }[]>([
-        {
-            type: 'text',
-            value: '',
-        },
-        {
-            type: 'tel',
-            value: '',
-        },
-        {
-            type: 'email',
-            value: '',
-        },
-        {
-            type: 'textarea',
-            value: '',
-        },
-    ]);
-
-    const onInputForm = (index: number, value: string, type: string): void => {
-        if (index === 3 && value.length > 200 && type === 'textarea') return;
-        if (value.length > 50 && type !== 'textarea') return;
-        setInputForm((prev) => {
-            const newPrev = [...prev];
-            newPrev[index].value = value;
-            return newPrev;
-        })
-    };
+    const { register, watch, setValue, handleSubmit } = useForm<footer_form_inputs>({
+        defaultValues: {
+            username: '',
+            phone: '',
+            email: '',
+            message: '',
+        }
+    })
 
     const onKeyDown = (e: KeyboardEvent, type: string): void => {
         if (type === 'tel') {
@@ -48,22 +29,40 @@ export default function FooterForm() {
         }
     }
 
+    const onSubmit = (data: footer_form_inputs) => console.log('submited', data)
+
     return (
-        <form className="max-laptop:hidden">
+        <form className="max-laptop:hidden" onSubmit={handleSubmit(onSubmit)} noValidate>
             <span className="font-bold text-xl">پیام به ترخینه </span>
             <div className="mt-4 h-36 flex items-center gap-6">
                 <div className="flex flex-col gap-3">
                     {
-                        inputList.map(({ type, placeholder, dir }, index) => (
+                        inputList.map(({ id, type, placeholder, dir }, index) => (
                             <Input
                                 key={index + 1}
                                 type={type}
                                 dir={dir}
                                 placeholder={placeholder}
                                 className="placeholder:text-right placeholder:text-white h-10"
-                                value={inputForm[index].value}
-                                onChange={(e) => onInputForm(index, e.target.value, type)}
                                 onKeyDown={e => onKeyDown(e, type)}
+                                {...register(id, {
+                                    maxLength: 30,
+                                    pattern: id === 'email' ? {
+                                        value: /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
+                                        message: ''
+                                    } : undefined,
+                                    required: id !== 'email' ?
+                                        {
+                                            value: true,
+                                            message: 'فیلد خالی است'
+                                        } : false,
+                                    onChange: (e) => {
+                                        const value = e.target.value;
+                                        if (value.length > 30) {
+                                            setValue(id, value.substring(0, 30))
+                                        }
+                                    }
+                                })}
                             />
                         ))
                     }
@@ -72,14 +71,25 @@ export default function FooterForm() {
                     <Textarea
                         placeholder="پیام شما"
                         className="w-72 h-36 placeholder:text-white resize-none"
-                        value={inputForm[3].value}
-                        onChange={(e) => onInputForm(3, e.target.value, 'textarea')}
+                        {...register('message', {
+                            maxLength: 200,
+                            required: {
+                                value: true,
+                                message: 'لطفا متن خود را پر کنید'
+                            },
+                            onChange: (e) => {
+                                const value = e.target.value;
+                                if (value.length > 200) {
+                                    setValue('message', value.substring(0, 200));
+                                }
+                            }
+                        })}
                     />
-                    <p dir="ltr" className="text-xs mt-1 mb-2">{inputForm[3].value.length} / 200</p>
+                    <p dir="ltr" className="text-xs mt-1 mb-2">{watch('message').length} / 200</p>
                     <Button
+                        type="submit"
                         variant='transparent'
-                        className="float-left w-48 h-10"
-                        onClick={(e) => e.preventDefault()}>
+                        className="float-left w-48 h-10">
                         ارسال پیام
                     </Button>
                 </div>
