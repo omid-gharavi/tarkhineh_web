@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { inputList } from "@/lists/footer-lists";
-import { KeyboardEvent, useEffect } from "react";
+import { KeyboardEvent } from "react";
 import { SubmitErrorHandler, useForm } from 'react-hook-form'
 import { toast } from "sonner";
 
