@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { inputList } from "@/lists/footer-lists";
-import { KeyboardEvent } from "react";
-import { useForm } from 'react-hook-form'
+import { KeyboardEvent, useEffect } from "react";
+import { SubmitErrorHandler, useForm } from 'react-hook-form'
+import { toast } from "sonner";
 
 export default function FooterForm() {
     const { register, watch, setValue, handleSubmit } = useForm<footer_form_inputs>({
@@ -29,15 +30,32 @@ export default function FooterForm() {
         }
     }
 
-    const onSubmit = (data: footer_form_inputs) => console.log('submited', data)
+    const onSubmit = (data: footer_form_inputs) => {
+        console.log('submited', data)
+        toast.success('پیام شما با موفقیت ارسال شد')
+    }
+    const onError: SubmitErrorHandler<footer_form_inputs> = (errors) => {
+        if (errors.username) {
+            toast.error(errors.username.message);
+        }
+        if (errors.phone) {
+            toast.error(errors.phone.message);
+        }
+        if (errors.email) {
+            toast.error(errors.email.message);
+        }
+        if (errors.message) {
+            toast.error(errors.message.message);
+        }
+    };
 
     return (
-        <form className="max-laptop:hidden" onSubmit={handleSubmit(onSubmit)} noValidate>
+        <form className="max-laptop:hidden" onSubmit={handleSubmit(onSubmit, onError)} noValidate>
             <span className="font-bold text-xl">پیام به ترخینه </span>
             <div className="mt-4 h-36 flex items-center gap-6">
                 <div className="flex flex-col gap-3">
                     {
-                        inputList.map(({ id, type, placeholder, dir }, index) => (
+                        inputList.map(({ id, type, placeholder, dir, errorMessage }, index) => (
                             <Input
                                 key={index + 1}
                                 type={type}
@@ -54,7 +72,7 @@ export default function FooterForm() {
                                     required: id !== 'email' ?
                                         {
                                             value: true,
-                                            message: 'فیلد خالی است'
+                                            message: `${errorMessage}`
                                         } : false,
                                     onChange: (e) => {
                                         const value = e.target.value;
