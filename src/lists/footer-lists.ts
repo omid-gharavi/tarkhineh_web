@@ -16,12 +16,14 @@ export const inputList: input_list[] = [
         type: 'text',
         placeholder: 'نام و نام خانوادگی',
         dir: 'rtl',
+        errorMessage: 'لطفا نام کاربری خود را وارد کنید'
     },
     {
         id: 'phone',
         type: 'tel',
         placeholder: 'شماره تماس',
         dir: 'ltr',
+        errorMessage: 'لطفا شماره تماس خود را وارد کنید'
     },
     {
         id: 'email',

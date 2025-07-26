@@ -10,6 +10,7 @@ interface input_list {
     type: 'text' | 'tel' | 'email' | 'textarea',
     placeholder: string,
     dir: 'ltr' | 'rtl',
+    errorMessage?: string
 }
 interface footer_list {
     title: string,
