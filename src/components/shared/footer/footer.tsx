@@ -5,7 +5,7 @@ import { footerList } from "@/lists/footer-lists";
 
 export default function Footer() {
     return (
-        <div className="mt-12 relative min-h-80">
+        <footer className="mt-12 relative min-h-80 max-laptop:min-h-[1000px]">
             <Image
                 src={'/images/pic01.jpg'}
                 alt="footer"
@@ -14,7 +14,7 @@ export default function Footer() {
                 className="absolute -z-20 size-full object-cover"
             />
             <div className="absolute -z-10 inset-0 bg-[rgba(0,0,0,0.5)]"></div>
-            <div className="text-white pt-8 flex justify-center gap-32 max-laptop:gap-20">
+            <div className="text-white pt-8 flex max-laptop:flex-col max-laptop:items-center justify-center gap-32 max-laptop:gap-20">
                 {
                     footerList.map(({ title, lists, icons }, index) => (
                         <ul className="flex flex-col gap-4" key={index + 1}>
@@ -40,6 +40,6 @@ export default function Footer() {
                 }
                 <FooterForm />
             </div>
-        </div>
+        </footer>
     )
 }

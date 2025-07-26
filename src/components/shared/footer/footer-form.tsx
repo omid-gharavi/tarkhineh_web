@@ -50,10 +50,10 @@ export default function FooterForm() {
     };
 
     return (
-        <form className="max-laptop:hidden" onSubmit={handleSubmit(onSubmit, onError)} noValidate>
+        <form className="" onSubmit={handleSubmit(onSubmit, onError)} noValidate>
             <span className="font-bold text-xl">پیام به ترخینه </span>
-            <div className="mt-4 h-36 flex items-center gap-6">
-                <div className="flex flex-col gap-3">
+            <div className="mt-4 h-36 flex max-laptop:flex-col items-center gap-6">
+                <div className="flex flex-col gap-3 max-laptop:w-full">
                     {
                         inputList.map(({ id, type, placeholder, dir, errorMessage }, index) => (
                             <Input
@@ -61,7 +61,7 @@ export default function FooterForm() {
                                 type={type}
                                 dir={dir}
                                 placeholder={placeholder}
-                                className="placeholder:text-right placeholder:text-white h-10"
+                                className="placeholder:text-right placeholder:text-white !w-full h-10"
                                 onKeyDown={e => onKeyDown(e, type)}
                                 {...register(id, {
                                     maxLength: 30,
