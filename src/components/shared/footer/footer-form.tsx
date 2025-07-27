@@ -23,7 +23,8 @@ export default function FooterForm() {
             phone: '',
             email: '',
             message: '',
-        }
+        },
+        shouldFocusError: false,
     })
 
     const onKeyDown = (e: KeyboardEvent, type: string): void => {
