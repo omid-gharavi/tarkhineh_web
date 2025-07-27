@@ -4,11 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { inputList } from "@/lists/footer-lists";
+import { footerFormRequest } from "@/services/footer-form-service";
 import { KeyboardEvent } from "react";
 import { SubmitErrorHandler, useForm } from 'react-hook-form'
 import { toast } from "sonner";
+import { useMutation } from '@tanstack/react-query'
 
 export default function FooterForm() {
+    const { mutateAsync, error } = useMutation({
+        mutationFn: (data: footer_form_inputs) => footerFormRequest.instance.postMessage(data),
+    })
+
     const { register, watch, setValue, handleSubmit } = useForm<footer_form_inputs>({
         defaultValues: {
             username: '',
@@ -32,25 +38,30 @@ export default function FooterForm() {
 
     const onSubmit = (data: footer_form_inputs) => {
         console.log('submited', data)
-        toast.success('پیام شما با موفقیت ارسال شد')
+        toast.promise(mutateAsync(data), {
+            loading: 'درحال ارسال پیام شما',
+            success: 'پیام شما با موفقیت ارسال شد',
+            error: `${error?.message}`
+        })
     }
+
     const onError: SubmitErrorHandler<footer_form_inputs> = (errors) => {
-        if (errors.username) {
-            toast.error(errors.username.message);
-        }
-        if (errors.phone) {
-            toast.error(errors.phone.message);
+        if (errors.message) {
+            toast.error(errors.message.message);
         }
         if (errors.email) {
             toast.error(errors.email.message);
         }
-        if (errors.message) {
-            toast.error(errors.message.message);
+        if (errors.phone) {
+            toast.error(errors.phone.message);
+        }
+        if (errors.username) {
+            toast.error(errors.username.message);
         }
     };
 
     return (
-        <form className="" onSubmit={handleSubmit(onSubmit, onError)} noValidate>
+        <form onSubmit={handleSubmit(onSubmit, onError)} noValidate>
             <span className="font-bold text-xl">پیام به ترخینه </span>
             <div className="mt-4 h-36 flex max-laptop:flex-col items-center gap-6">
                 <div className="flex flex-col gap-3 max-laptop:w-full">
@@ -67,8 +78,12 @@ export default function FooterForm() {
                                     maxLength: 30,
                                     pattern: id === 'email' ? {
                                         value: /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
-                                        message: ''
-                                    } : undefined,
+                                        message: 'ایمیل وارد شده معتبر نمی باشد'
+                                    } :
+                                        id === 'phone' ? {
+                                            value: /^(\+98|0098|98|0)?9[0-9]{9}$/,
+                                            message: 'شماره وارد شده معتبر نمی باشد'
+                                        } : undefined,
                                     required: id !== 'email' ?
                                         {
                                             value: true,
@@ -93,7 +108,7 @@ export default function FooterForm() {
                             maxLength: 200,
                             required: {
                                 value: true,
-                                message: 'لطفا متن خود را پر کنید'
+                                message: 'لطفا پیام خود را پر کنید'
                             },
                             onChange: (e) => {
                                 const value = e.target.value;

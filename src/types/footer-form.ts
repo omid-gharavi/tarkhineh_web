@@ -7,11 +7,12 @@ interface footer_form_inputs {
 
 interface input_list {
     id: 'username' | 'phone' | 'email' | 'message',
-    type: 'text' | 'tel' | 'email' | 'textarea',
+    type: 'text' | 'number' | 'tel' | 'email' | 'textarea',
     placeholder: string,
     dir: 'ltr' | 'rtl',
     errorMessage?: string
 }
+
 interface footer_list {
     title: string,
     lists: string[],
