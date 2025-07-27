@@ -12,7 +12,7 @@ import { useMutation } from '@tanstack/react-query'
 
 export default function FooterForm() {
     const { mutateAsync, error } = useMutation({
-        mutationFn: (data: footer_form_inputs) => footerFormRequest.instance.postMessage(data),
+        mutationFn: (data: footer_form_inputs) => footerFormRequest.instance.postMessage(data)
     })
 
     const { register, watch, setValue, handleSubmit } = useForm<footer_form_inputs>({
