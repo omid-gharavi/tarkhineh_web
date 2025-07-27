@@ -11,11 +11,13 @@ import { toast } from "sonner";
 import { useMutation } from '@tanstack/react-query'
 
 export default function FooterForm() {
-    const { mutateAsync, error } = useMutation({
-        mutationFn: (data: footer_form_inputs) => footerFormRequest.instance.postMessage(data)
+    const { mutateAsync } = useMutation({
+        mutationFn: (data: footer_form_inputs) => footerFormRequest.instance.postMessage(data),
+        onSuccess: () => reset(),
+        onError: (error) => console.error(error)
     })
 
-    const { register, watch, setValue, handleSubmit } = useForm<footer_form_inputs>({
+    const { register, watch, setValue, handleSubmit, reset } = useForm<footer_form_inputs>({
         defaultValues: {
             username: '',
             phone: '',
@@ -37,11 +39,10 @@ export default function FooterForm() {
     }
 
     const onSubmit = (data: footer_form_inputs) => {
-        console.log('submited', data)
         toast.promise(mutateAsync(data), {
             loading: 'درحال ارسال پیام شما',
             success: 'پیام شما با موفقیت ارسال شد',
-            error: `${error?.message}`
+            error: 'خطا!'
         })
     }
 

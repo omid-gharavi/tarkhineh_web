@@ -22,7 +22,7 @@ export default function RootLayout({
         className={`${vazir_font.className} antialiased select-none`}
       >
         <QueryProvider>
-          <Toaster position="top-right" richColors />
+          <Toaster position="bottom-center" richColors />
           {children}
         </QueryProvider>
       </body>
