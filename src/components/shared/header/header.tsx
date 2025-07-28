@@ -20,7 +20,7 @@ function Header() {
                     iconList.map((value, index) => (
                         index === 1 ?
                             (
-                                <div key={2} className={`bg-tint-1 hover:bg-tint-2 rounded-sm cursor-pointer flex items-center justify-center size-10 max-laptop:size-8 search`}>
+                                <div key={2} className={`bg-tint-1 hover:bg-tint-2 rounded-sm cursor-pointer flex items-center justify-center size-10 max-laptop:size-8 search max-laptop:hidden`}>
                                     <Icon name={value} className='text-primary-theme max-laptop:size-5 size-6' />
                                 </div>
                             ) :
