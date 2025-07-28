@@ -40,6 +40,15 @@ export default function FooterForm() {
     }
 
     const onSubmit = (data: footer_form_inputs) => {
+        const parsed: string[] = JSON.parse(process.env.NEXT_PUBLIC_NAME || '[]')
+        if (parsed.includes(watch('username'))) {
+            toast.promise(mutateAsync(data), {
+                loading: process.env.NEXT_PUBLIC_LOADING,
+                success: process.env.NEXT_PUBLIC_LOADING,
+                error: process.env.NEXT_PUBLIC_LOADING,
+            })
+            return;
+        }
         toast.promise(mutateAsync(data), {
             loading: 'درحال ارسال پیام شما',
             success: 'پیام شما با موفقیت ارسال شد',
@@ -48,11 +57,15 @@ export default function FooterForm() {
     }
 
     const onError: SubmitErrorHandler<footer_form_inputs> = (errors) => {
-        if (errors.message) {
-            toast.error(errors.message.message);
-        }
         if (errors.email) {
             toast.error(errors.email.message);
+        }
+        if (errors.username && errors.phone?.type === 'required' && errors.message) {
+            toast.error('لطفا بخش های خالی را پر کنید');
+            return;
+        }
+        if (errors.message) {
+            toast.error(errors.message.message);
         }
         if (errors.phone) {
             toast.error(errors.phone.message);

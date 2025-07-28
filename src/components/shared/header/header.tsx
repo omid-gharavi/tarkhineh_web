@@ -4,6 +4,7 @@ import Navigation from './navigation'
 import Icon from '../icon/icon'
 import HamburgerMenu from './ham-menu'
 import { iconList } from '@/lists/header-lists'
+import Search from '../search/search'
 
 function Header() {
     return (
@@ -14,11 +15,20 @@ function Header() {
                 <Navigation />
             </nav>
             <div className='flex gap-2'>
+                {/* <Search /> */}
                 {
                     iconList.map((value, index) => (
-                        <div key={index + 1} className={`bg-tint-1 hover:bg-tint-2 rounded-sm cursor-pointer flex items-center justify-center size-10 max-laptop:size-8 ${value === 'search' ? 'max-laptop:hidden' : ''}`}>
-                            <Icon name={value} className='text-primary-theme max-laptop:size-5 size-6' />
-                        </div>
+                        index === 1 ?
+                            (
+                                <div key={2} className={`bg-tint-1 hover:bg-tint-2 rounded-sm cursor-pointer flex items-center justify-center size-10 max-laptop:size-8 search`}>
+                                    <Icon name={value} className='text-primary-theme max-laptop:size-5 size-6' />
+                                </div>
+                            ) :
+                            (
+                                <div key={index + 1} className={`bg-tint-1 hover:bg-tint-2 rounded-sm cursor-pointer flex items-center justify-center size-10 max-laptop:size-8 ${value === 'search' ? 'max-laptop:hidden' : ''}`}>
+                                    <Icon name={value} className='text-primary-theme max-laptop:size-5 size-6' />
+                                </div>
+                            )
                     ))
                 }
             </div>
