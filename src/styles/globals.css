@@ -112,6 +112,7 @@
   --color-warning-extra-light: #FFF8E1;
   --breakpoint-laptop: 1124px;
   --container-desktop: 1920px;
+  --spacing-full-dynamic: 100dvh;
   --font-vazir: 'Vazir'
 }
 
@@ -161,6 +162,11 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  input[type='search']::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   .branch {

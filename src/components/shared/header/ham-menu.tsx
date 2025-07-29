@@ -12,7 +12,7 @@ function HamburgerMenu() {
             <SheetTrigger className='max-laptop:block hidden'>
                 <Icon name='menu' className='size-8 text-primary-theme' />
             </SheetTrigger>
-            <SheetContent className='p-4'>
+            <SheetContent className='p-4 z-[70]'>
                 <SheetTitle className='flex items-center justify-between'>
                     <Logo />
                     <SheetClose asChild>
@@ -27,7 +27,7 @@ function HamburgerMenu() {
                                 <p>جستجو</p>
                             </button>
                         </SheetTrigger>
-                        <SheetContent side='bottom' className='min-h-[100dvh] !rounded-none'>
+                        <SheetContent side='bottom' className='min-h-[100dvh] !rounded-none z-[70]'>
                             <DrawerSearch />
                         </SheetContent>
                     </Sheet>

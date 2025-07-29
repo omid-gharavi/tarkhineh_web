@@ -8,7 +8,7 @@ import Slider from "@/components/shared/slider/slider";
 export default function Home() {
 
   return (
-    <div className="mx-auto max-w-desktop">
+    <div className="relative mx-auto max-w-desktop">
       <Header />
       <Slider />
       <Menu />
