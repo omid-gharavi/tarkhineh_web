@@ -14,7 +14,7 @@ export default function Search({ searchToggle }: Props) {
 
     return (
         <div
-            className={`fixed top-[115px] right-0 z-50 shadow-lg bg-white w-full h-[calc(100dvh-115px)] transition-all duration-300 ease-in-out ${searchToggle ? 'translate-y-0' : '-translate-y-[calc(100dvh)]'}`}>
+            className={`fixed top-[115px] right-0 z-50 shadow-lg bg-white w-full h-[calc(100dvh-115px)] transition-all duration-500 ease-in-out ${searchToggle ? 'translate-y-0' : '-translate-y-[calc(100dvh)]'}`}>
             <div className="pt-20 pb-12 flex flex-col items-center gap-14">
                 <div className="relative">
                     <Input
