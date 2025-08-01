@@ -40,7 +40,7 @@ function Header() {
                     }
                 </div>
             </div>
-            <Search searchToggle={searchToggle} />
+            <Search setSearchToggle={setSearchToggle} searchToggle={searchToggle} />
         </>
     )
 }
