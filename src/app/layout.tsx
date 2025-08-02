@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { vazir_font } from "@/utils/fonts";
 import "@/styles/globals.css";
 import { Toaster } from 'sonner'
-import QueryProvider from "@/providers/QueryProvider";
+import QueryProvider from "@/providers/query-provider";
+import OnlineStatus from "@/providers/online-status";
 
 export const metadata: Metadata = {
   title: "ترخینه",
@@ -23,7 +24,9 @@ export default function RootLayout({
       >
         <QueryProvider>
           <Toaster position="bottom-center" richColors />
-          {children}
+          <OnlineStatus>
+            {children}
+          </OnlineStatus>
         </QueryProvider>
       </body>
     </html>

@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ReactNode } from "react"
 
 interface Props {
-    children: ReactNode
+    children: Readonly<ReactNode>
 };
 
 const client = new QueryClient()
