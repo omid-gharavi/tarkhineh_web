@@ -6,4 +6,8 @@ export class footerFormRequest {
     async postMessage(data: footer_form_inputs) {
         return fetchRequestInstance({ url: '/usermessages', method: 'POST', data: data })
     }
+
+    async getSearchFood(name: string) {
+        return fetchRequestInstance({ url: `/searchfood?name=${name}`, method: "GET" })
+    }
 }
