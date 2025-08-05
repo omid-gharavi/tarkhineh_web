@@ -124,7 +124,10 @@ export default function FooterForm() {
                             }
                         })}
                     />
-                    <p dir="ltr" className="text-xs mt-1 mb-2">{watch('message').length} / 200</p>
+                    <div dir="ltr" className="flex items-center gap-1.5 text-xs mt-1 mb-2">
+                        <span className="w-3.5">{watch('message').length}</span>
+                        <span>/ 200</span>
+                    </div>
                     <Button
                         type="submit"
                         variant='transparent'

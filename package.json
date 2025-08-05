@@ -2,6 +2,11 @@
   "name": "tarkhineh-web",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Omid Gharavi", 
+    "email": "omidgharavi82@gmail.com",
+    "url": "https://github.com/Omid-Gharavi"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
