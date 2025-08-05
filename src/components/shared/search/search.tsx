@@ -2,9 +2,11 @@
 
 import { NotFoundSearch } from "@/components/svgs/not-found-search";
 import { Input } from "@/components/ui/input"
-import { SetStateAction, useRef } from "react"
+import { SetStateAction, useState } from "react"
 import Icon from "../icon/icon";
 import { X } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { footerFormRequest } from "@/services/footer-form-service";
 
 interface Props {
     setSearchToggle: React.Dispatch<SetStateAction<boolean>>
@@ -12,7 +14,13 @@ interface Props {
 }
 
 export default function Search({ setSearchToggle, searchToggle }: Props) {
-    const searchRef = useRef<HTMLInputElement | null>(null);
+    const [search, setSearch] = useState<string>('')
+
+    const { data, isLoading, isError, } = useQuery({
+        queryKey: ['search food', search],
+        queryFn: () => footerFormRequest.instance.getSearchFood(search),
+        enabled: !!search
+    })
 
     return (
         <div
@@ -23,7 +31,8 @@ export default function Search({ setSearchToggle, searchToggle }: Props) {
                     <Input
                         className="w-[392px] pl-11"
                         placeholder="جستجو..."
-                        ref={searchRef}
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
                         type="search"
                         id="search"
                     />
