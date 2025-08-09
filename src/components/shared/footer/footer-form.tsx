@@ -100,7 +100,14 @@ export default function FooterForm() {
                                         if (value.length > 30) {
                                             setValue(id, value.substring(0, 30))
                                         }
+                                    },
+                                    validate: id === "username" ? (value) => {
+                                        if (/\s/.test(value)) {
+                                            return 'فضای خالی در نام و نام خانوادگی مجاز نیست'
+                                        }
+                                        return value;
                                     }
+                                        : undefined
                                 })}
                             />
                         ))
@@ -121,6 +128,12 @@ export default function FooterForm() {
                                 if (value.length > 200) {
                                     setValue('message', value.substring(0, 200));
                                 }
+                            },
+                            validate: (value) => {
+                                if (/\s/.test(value)) {
+                                    return 'فضای خالی در پیام مجاز نیست'
+                                }
+                                return value;
                             }
                         })}
                     />
