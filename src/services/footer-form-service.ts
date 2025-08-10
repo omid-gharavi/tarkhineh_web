@@ -8,6 +8,6 @@ export class footerFormRequest {
     }
 
     async getSearchFood(name: string) {
-        return fetchRequestInstance({ url: `/searchfood?name=${name}`, method: "GET" })
+        return fetchRequestInstance({ url: `/searchfood`, method: "GET", params: { search: name }, })
     }
 }

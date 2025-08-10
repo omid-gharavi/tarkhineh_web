@@ -22,6 +22,8 @@ export default function Search({ setSearchToggle, searchToggle }: Props) {
         enabled: !!search
     })
 
+    console.log('search', data)
+
     return (
         <div
             className={`fixed top-[115px] right-0 z-50 shadow-lg bg-white w-full h-[calc(100dvh-115px)] transition-all duration-500 ease-in-out ${searchToggle ? 'translate-y-0' : '-translate-y-[calc(100dvh)]'}`}>
